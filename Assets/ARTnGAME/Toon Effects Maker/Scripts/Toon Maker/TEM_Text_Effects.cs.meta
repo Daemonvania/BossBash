@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 991e93e46203b7a458f3c1ce55d0a65d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/Scripts/Toon Maker/TEM_Text_Effects.cs
+  uploadId: 760865

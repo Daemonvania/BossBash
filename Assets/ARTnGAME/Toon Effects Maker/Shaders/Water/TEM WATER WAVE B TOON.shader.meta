@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 52f12c55a59992a40854e9feb92e9b28
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/Shaders/Water/TEM WATER WAVE B TOON.shader
+  uploadId: 760865

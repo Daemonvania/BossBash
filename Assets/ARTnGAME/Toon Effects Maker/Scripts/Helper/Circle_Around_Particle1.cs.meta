@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 21a4bd18c8e1f6b4ba651fe3ef9adcca
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/Scripts/Helper/Circle_Around_Particle1.cs
+  uploadId: 760865

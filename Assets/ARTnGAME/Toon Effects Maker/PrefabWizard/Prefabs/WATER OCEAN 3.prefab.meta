@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fb1c597f5f5f958408b5ec5148ad46d5
+labels:
+- Water
+- Toon
+- Ocean
+- Waves
+- Shader
+- Buoyancy
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/PrefabWizard/Prefabs/WATER OCEAN
+    3.prefab
+  uploadId: 760865

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ec459140255302a4bb68db49dc458a28
+labels:
+- Toon
+- Smoke
+- Aura
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/PrefabWizard/Prefabs/SMOKE_AURA_1.prefab
+  uploadId: 760865

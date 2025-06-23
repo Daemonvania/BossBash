@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: a9118e9b179ba7d4a8cf1933c9715b0d
+labels:
+- Effect
+- Fireworks
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/PrefabWizard/Prefabs/FIRE WORKS.prefab
+  uploadId: 760865

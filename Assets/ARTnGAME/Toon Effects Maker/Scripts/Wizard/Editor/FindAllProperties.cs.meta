@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 728259477c676e043829222b778064a7
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/Scripts/Wizard/Editor/FindAllProperties.cs
+  uploadId: 760865

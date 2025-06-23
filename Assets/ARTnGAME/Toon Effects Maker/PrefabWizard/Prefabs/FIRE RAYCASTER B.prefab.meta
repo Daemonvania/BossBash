@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f8b97b1712f1ec1429ee6cd3f418f598
+labels:
+- Fire
+- Toon
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 248781
+  packageName: Toon Effects Maker URP - Anime & Cartoon FX
+  packageVersion: 1.0
+  assetPath: Assets/ARTnGAME/Toon Effects Maker/PrefabWizard/Prefabs/FIRE RAYCASTER
+    B.prefab
+  uploadId: 760865

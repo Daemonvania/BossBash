@@ -1,0 +1,17 @@
+using UnityEngine;
+public enum BossActionType
+{
+    Attack,
+    ShortPause,
+    LongPause,
+    // Add more actions as needed
+}
+public class BossAction
+{
+    public BossActionType ActionType;
+
+    public BossAction(BossActionType actionType)
+    {
+        ActionType = actionType;
+    }
+}
