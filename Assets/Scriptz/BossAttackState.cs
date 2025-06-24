@@ -31,6 +31,9 @@ public class BossAttackState: BossBaseState
                 case BossActionType.LongPause:
                     await Task.Delay(Mathf.RoundToInt(stateManager.longPauseDuration * 1000));
                     break;
+                case BossActionType.NoAttack:
+                   
+                    break;
             }
         }
         await Task.Delay(2000);

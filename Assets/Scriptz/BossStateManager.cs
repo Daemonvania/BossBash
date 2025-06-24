@@ -19,6 +19,7 @@ public class BossStateManager : MonoBehaviour
     private BossActionGenerator actionGenerator;
 
     public event Action onAttack;
+    public event Action<BossBaseState> OnEnteredState;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,10 +46,12 @@ public class BossStateManager : MonoBehaviour
     public void SwitchState(BossBaseState state)
     {
         currentState = state;
+        OnEnteredState?.Invoke(state);
         state.EnterState(this);
     }
     public void BroadcastAttack()
     {
         onAttack?.Invoke();
     }
+    
 }

@@ -4,6 +4,7 @@ public enum BossActionType
     Attack,
     ShortPause,
     LongPause,
+    NoAttack
     // Add more actions as needed
 }
 public class BossAction

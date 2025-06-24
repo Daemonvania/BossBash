@@ -18,6 +18,11 @@ public class BossActionGenerator : MonoBehaviour
             bossActions.Add(new BossAction(
             Random.Range(0, 2) == 0 ? BossActionType.ShortPause : BossActionType.LongPause
             ));
+            
+            // bossActions.Add(new BossAction(
+            //     Random.Range(0, 2) == 0 ? BossActionType.Attack: BossActionType.NoAttack
+            // ));
+            // bossActions.Add(new BossAction(BossActionType.ShortPause));
         }
         
         return bossActions;
