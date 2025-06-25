@@ -20,8 +20,8 @@ public class FloatFollow : MonoBehaviour
         float sineOffset = Mathf.Sin(Time.time * frequency) * amplitude;
 
         // Follow the target's position with the sine wave offset
-        Vector3 targetPosition = new Vector3(target.position.x, target.position.y + sineOffset, target.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 20f * Time.deltaTime);
+       // Vector3 targetPosition = new Vector3(target.position.x, target.position.y + sineOffset, target.position.z);
+       // transform.position = Vector3.MoveTowards(transform.position, targetPosition, 20f * Time.deltaTime);
       
     }
 }
