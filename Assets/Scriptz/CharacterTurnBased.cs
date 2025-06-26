@@ -40,7 +40,12 @@ public class CharacterTurnBased : MonoBehaviour
         Busy,
     }
     
-    public void Damage(int damageAmount) {
+    public void Damage(int damageAmount)
+    {
+        if (isOverheating)
+        {
+            damageAmount = Mathf.RoundToInt(damageAmount * 1.5f);
+        }
         healthSystem.Damage(damageAmount);
 
         if (healthSystem.IsDead()) {

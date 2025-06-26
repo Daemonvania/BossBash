@@ -105,74 +105,62 @@ public class BattleHandlerTurns : MonoBehaviour
         ChooseNextActiveCharacter();    
     }
     
-    private void ChooseNextActiveCharacter() {
-        if (TestBattleOver()) {
+    private void ChooseNextActiveCharacter()
+    {
+        if (TestBattleOver())
             return;
-        }
-        if (activeCharacterBattle == playerCharacterBattle) {
-            SetActiveCharacterBattle(enemyCharacterBattle);
-            //if opponent overheating add to the ticker
-            if (playerCharacterBattle.isOverheating)
-            {
-                playerCharacterBattle.overheatTicker++;
-                if (playerCharacterBattle.overheatTicker > 2)
-                {
-                    playerCharacterBattle.EndOverheat();
-                    Debug.Log("EndOverheatBoss");
-                }
-            }
-            if (enemyCharacterBattle.isOverheating)
-            {
-                //if overheated last turn skip turn
-                if (enemyCharacterBattle.overheatTicker <= 2)
-                {
-                    StartCoroutine(SkipTurn(enemyCharacterBattle));
-                    return;
-                }
-                //if overheated before remove overheat
-                if (enemyCharacterBattle.overheatTicker > 2)
-                {
-                    enemyCharacterBattle.EndOverheat();
-                    Debug.Log("EndOverheatBoss");
-                }
-            }
-            //perform boss attack based on AI
+
+        bool isPlayerTurn = activeCharacterBattle == playerCharacterBattle;
+
+        CharacterTurnBased current = isPlayerTurn ? enemyCharacterBattle : playerCharacterBattle;
+        CharacterTurnBased previous = isPlayerTurn ? playerCharacterBattle : enemyCharacterBattle;
+
+        SetActiveCharacterBattle(current);
+
+        HandleOverheatTicker(previous);
+        if (HandleOverheatSkip(current))
+            return;
+
+        if (isPlayerTurn)
+        {
+            Debug.Log("EnemyAICalled");
             currentState = BattleState.EnemyTurn;
-           Attack(_bossAI.ChooseBossAttack());
-        } else {
-            SetActiveCharacterBattle(playerCharacterBattle);
-            //if opponent overheating add to the ticker
-            if (enemyCharacterBattle.isOverheating)
-            {
-                enemyCharacterBattle.overheatTicker++;
-                if (enemyCharacterBattle.overheatTicker > 2)
-                {
-                    enemyCharacterBattle.EndOverheat();
-                    Debug.Log("EndOverheatBoss");
-                }
-            }
-            //if overheated skip turn
-            if (playerCharacterBattle.isOverheating)
-            {
-                //if overheated last turn skip turn
-                if (playerCharacterBattle.overheatTicker <= 2)
-                {
-                    //todo can Have a lil "OVERHEATED" popup here.
-                    StartCoroutine(SkipTurn(playerCharacterBattle));
-                    return;
-                }
-                //if overheated before remove overheat
-                if (playerCharacterBattle.overheatTicker > 2)
-                {
-                    playerCharacterBattle.EndOverheat();
-                    Debug.Log("EndOverheatPlayer");
-                }
-            }
-            //Show Player UI & other 
+            Attack(_bossAI.ChooseBossAttack());
+        }
+        else
+        {
             StartPlayerTurn();
             currentState = BattleState.WaitingForPlayer;
         }
     }
+    private void HandleOverheatTicker(CharacterTurnBased character)
+    {
+        if (!character.isOverheating) return;
+
+        character.overheatTicker++;
+        if (character.overheatTicker > 2)
+        {
+            character.EndOverheat();
+            Debug.Log($"EndOverheat{(character == playerCharacterBattle ? "Player" : "Boss")}");
+        }
+    }
+
+    private bool HandleOverheatSkip(CharacterTurnBased character)
+    {
+        if (!character.isOverheating) return false;
+
+        if (character.overheatTicker <= 2)
+        {
+            // TODO: Optional: show "OVERHEATED" popup
+            StartCoroutine(SkipTurn(character));
+            return true;
+        }
+
+        // Already handled in HandleOverheatTicker if ticker > 2
+        return false;
+    }
+
+
 
     IEnumerator SkipTurn(CharacterTurnBased character)
     {

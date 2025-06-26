@@ -17,7 +17,7 @@ MonoBehaviour:
   Actions:
   - Target: 1
     Type: 1
-    Amount: 90
+    Amount: 30
   - Target: 0
     Type: 1
     Amount: 10
