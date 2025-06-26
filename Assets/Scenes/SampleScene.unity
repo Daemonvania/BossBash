@@ -865,7 +865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 60b8b9dd301da0f4eb14d7d616a47f67, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 18.02
 --- !u!222 &209918660
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1806,7 +1806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1846,11 +1846,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 90.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2479,10 +2479,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0e87b85cc323ba549b4b86e222d051c7, type: 2}
+  m_sharedMaterial: {fileID: -551556164247578991, guid: 0e87b85cc323ba549b4b86e222d051c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2544,7 +2544,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.0065612793, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3059,10 +3059,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0e87b85cc323ba549b4b86e222d051c7, type: 2}
+  m_sharedMaterial: {fileID: -551556164247578991, guid: 0e87b85cc323ba549b4b86e222d051c7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3124,7 +3124,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.0065612793, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3202,6 +3202,7 @@ MonoBehaviour:
   MainButtons: {fileID: 25329927}
   AttackButtons: {fileID: 1547710233}
   DefendButtons: {fileID: 1556486945}
+  _menuEventSystemHandler: {fileID: 189593197}
 --- !u!1001 &886324347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4049,7 +4050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 60b8b9dd301da0f4eb14d7d616a47f67, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4058,7 +4059,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 18.02
 --- !u!222 &1180401150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4734,7 +4735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4742,7 +4743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4782,11 +4783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 90.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -128.06999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3409046937663780114, guid: 8fd4e6351e5659e4daa1cc61c80f5dd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5937,7 +5938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5946614275381975636, guid: 00449b38143c3f249a8dc737ad50433f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6681499149722868596, guid: 00449b38143c3f249a8dc737ad50433f, type: 3}
       propertyPath: m_text

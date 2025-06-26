@@ -126,5 +126,15 @@ public class MenuEventSystemHandler : MonoBehaviour
             pointerEventData.selectedObject = null;
         }
     }
-    
+
+    public void ResetAllScalesAnimated()
+    {
+        foreach (var kvp in _scales)
+        {
+            if (kvp.Key != null && kvp.Key.transform != null)
+            {
+                kvp.Key.transform.DOScale(kvp.Value, _scaleDuration);
+            }
+        }
+    }
 }

@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject MainButtons;
     [SerializeField] private GameObject AttackButtons;
     [SerializeField] private GameObject DefendButtons;
+
+    [SerializeField] private MenuEventSystemHandler _menuEventSystemHandler;
     
     private BattleHandlerTurns _battleHandlerTurns;
 
@@ -45,18 +47,21 @@ public class UIManager : MonoBehaviour
     
     public void ShowAttackButtons()
     {
+        _menuEventSystemHandler.ResetAllScalesAnimated();
         MainButtons.SetActive(false);
         AttackButtons.SetActive(true);
     }
     
     public void ShowDefendButtons()
     {
+        _menuEventSystemHandler.ResetAllScalesAnimated();
         MainButtons.SetActive(false);
         DefendButtons.SetActive(true);
     }
 
     public void ShowMainMenu()
     {
+        _menuEventSystemHandler.ResetAllScalesAnimated();
         AttackButtons.SetActive(false);
         DefendButtons.SetActive(false);
         MainButtons.SetActive(true);
