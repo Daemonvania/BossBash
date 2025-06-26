@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attack : ScriptableObject
 {
     public string Name;
+    public string Description;
     public string animTriggerName;
 
     public List<TurnAction> Actions = new List<TurnAction>();

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814ae7a3cb4ef6a4195a8809428dd00e, type: 3}
   m_Name: OverheatOponent
   m_EditorClassIdentifier: 
-  Name: Shoot
+  Name: Overheat
+  Description: Overheats enemy, dealing heat damage
   animTriggerName: Shoot
   Actions:
   - Target: 1

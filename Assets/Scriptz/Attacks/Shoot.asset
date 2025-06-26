@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Shoot
   m_EditorClassIdentifier: 
   Name: Shoot
+  Description: Shoots enemy, dealing I could make this custom woah
   animTriggerName: Shoot
   Actions:
   - Target: 1

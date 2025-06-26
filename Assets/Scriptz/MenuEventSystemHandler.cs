@@ -88,12 +88,25 @@ public class MenuEventSystemHandler : MonoBehaviour
         Debug.Log("Selecteeed");
         Vector3 newScale = eventData.selectedObject.transform.localScale * _selectedAnimationScale;
         _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration);
+
+        ActionButton actionButton = eventData.selectedObject.GetComponent<ActionButton>();
+        if (actionButton != null)
+        {
+            actionButton.ShowInfo(); //todo interface instead so that I can have different functionality on each script "OnSelect"
+        }
+
     }
     
     public void OnDeselect(BaseEventData eventData)
     {
         Selectable sel = eventData.selectedObject.GetComponent<Selectable>();
         _scaleDownTween = eventData.selectedObject.transform.DOScale(_scales[sel], _scaleDuration);
+        
+        ActionButton actionButton = eventData.selectedObject.GetComponent<ActionButton>();
+        if (actionButton != null)
+        {
+            actionButton.HideInfo(); 
+        }
     }
 
     public void OnPointerEnter(BaseEventData eventData)
