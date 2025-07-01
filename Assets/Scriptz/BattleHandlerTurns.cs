@@ -125,13 +125,20 @@ public class BattleHandlerTurns : MonoBehaviour
         {
             Debug.Log("EnemyAICalled");
             currentState = BattleState.EnemyTurn;
-            Attack(_bossAI.ChooseBossAttack());
+            StartCoroutine(BossAttack());
         }
         else
         {
             StartPlayerTurn();
             currentState = BattleState.WaitingForPlayer;
         }
+    }
+
+    private IEnumerator BossAttack()
+    {
+        yield return new WaitForSeconds(1.5f);
+        playerCharacterBattle.OpponentAttacking();
+        Attack(_bossAI.ChooseBossAttack());
     }
     private void HandleOverheatTicker(CharacterTurnBased character)
     {
@@ -172,6 +179,7 @@ public class BattleHandlerTurns : MonoBehaviour
     void StartPlayerTurn()
     {
         OnPlayerTurn?.Invoke();
+        playerCharacterBattle.TurnStarted();
         playerCharacterBattle.Overheat(-5);
         enemyCharacterBattle.Overheat(-5);
     }

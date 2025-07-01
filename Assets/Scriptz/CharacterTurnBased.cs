@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CharacterTurnBased : MonoBehaviour
 {
-    // public bool isPlayer;
+     public bool isPlayer;
     
     private Animator animator;
     private Attack currentAttack = null;
@@ -25,27 +25,43 @@ public class CharacterTurnBased : MonoBehaviour
         _healthBarManager = GetComponent<HealthBarManager>();
         healthSystem = new HealthSystem(100);
         overheatSystem = new OverheatSystem(100);
-        healthSystem.OnHealthChanged += UpdateBars;
-        overheatSystem.OnOverheatChanged += UpdateBars;
+        healthSystem.OnHealthChanged += OnHealthChanged;
+        overheatSystem.OnOverheatChanged += OnHealthChanged;
         isOverheating = false;
     }
 
     private void Start()
     {
-        UpdateBars();
+        OnHealthChanged();
     }
 
     private enum State {
         Idle,
         Busy,
     }
-    
+
+
+    public void TurnStarted()
+    {
+        if (isPlayer)
+        {
+            animator.SetBool("Defend", false);
+        }
+    }
+    public void OpponentAttacking()
+    {
+        if (isPlayer)
+        {
+            animator.SetBool("Defend", true);
+        }
+    }
     public void Damage(int damageAmount)
     {
         if (isOverheating)
         {
             damageAmount = Mathf.RoundToInt(damageAmount * 1.5f);
         }
+        animator.SetTrigger("Hurt");
         healthSystem.Damage(damageAmount);
 
         if (healthSystem.IsDead()) {
@@ -111,11 +127,11 @@ public class CharacterTurnBased : MonoBehaviour
     {
         animator.SetBool(currentAttack.animTriggerName, false);
         OnAttackEnded?.Invoke();
-        
+
         currentAttack = null;
     }
 
-    void UpdateBars()
+    void OnHealthChanged()
     {
         _healthBarManager.UpdateBars(healthSystem.GetHealthPercent(), overheatSystem.GetOverheatPercent());
     }
