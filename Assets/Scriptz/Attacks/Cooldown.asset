@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cooldown
   Description: Cools self down
-  animTriggerName: Shoot
+  animTriggerName: Cooldown
   Actions:
   - Target: 0
     Type: 1

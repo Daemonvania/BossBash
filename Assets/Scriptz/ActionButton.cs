@@ -36,6 +36,7 @@ public class ActionButton : MonoBehaviour
 
     public void OnClicked()
     {
+        info.SetActive(false);
         BattleHandlerTurns.GetInstance().Attack(action);
     }
 

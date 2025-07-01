@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Overheat
   Description: Overheats enemy, dealing heat damage
-  animTriggerName: Shoot
+  animTriggerName: Attack
   Actions:
   - Target: 1
     Type: 1

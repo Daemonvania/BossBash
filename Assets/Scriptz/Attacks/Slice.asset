@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 814ae7a3cb4ef6a4195a8809428dd00e, type: 3}
-  m_Name: Heal
+  m_Name: Slice
   m_EditorClassIdentifier: 
-  Name: Heal
-  Description: Heals self
-  animTriggerName: Heal
+  Name: Slice
+  Description: Slice Enemy
+  animTriggerName: Slice
   Actions:
-  - Target: 0
+  - Target: 1
     Type: 0
-    Amount: -30
+    Amount: 35
   - Target: 0
     Type: 1
-    Amount: 40
+    Amount: 25
