@@ -139,7 +139,7 @@ public class CharacterTurnBased : MonoBehaviour
 
     void OnHealthChanged()
     {
-        _healthBarManager.UpdateBars(healthSystem.GetHealthPercent(), overheatSystem.GetOverheatPercent());
+        _healthBarManager.UpdateBarsGradual(healthSystem.GetHealthPercent(), overheatSystem.GetOverheatPercent());
     }
     
 }
