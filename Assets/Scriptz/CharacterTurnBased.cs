@@ -61,7 +61,11 @@ public class CharacterTurnBased : MonoBehaviour
         {
             damageAmount = Mathf.RoundToInt(damageAmount * 1.5f);
         }
-        animator.SetTrigger("Hurt");
+        else if (damageAmount > 0)
+        {
+            animator.SetTrigger("Hurt");
+        }
+
         healthSystem.Damage(damageAmount);
 
         if (healthSystem.IsDead()) {
@@ -75,6 +79,7 @@ public class CharacterTurnBased : MonoBehaviour
         {
             Debug.Log("Overheating");
             isOverheating = true;
+            animator.SetBool("Overheat", true);
         }
     }
 
@@ -82,6 +87,7 @@ public class CharacterTurnBased : MonoBehaviour
     {
         isOverheating = false;
         overheatTicker = 0;
+        animator.SetBool("Overheat", false);
         overheatSystem.SetOverheatAmount(0);
     }
 

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 814ae7a3cb4ef6a4195a8809428dd00e, type: 3}
-  m_Name: OverheatOponent
+  m_Name: StrongAttack
   m_EditorClassIdentifier: 
-  Name: Overheat
-  Description: Overheats enemy, dealing heat damage
-  animTriggerName: OverheatOpponent
+  Name: Strong Attack
+  Description: Hits enemy strong, but bad for heat
+  animTriggerName: StrongAttack
   Actions:
   - Target: 1
-    Type: 1
-    Amount: 30
+    Type: 0
+    Amount: 35
   - Target: 0
     Type: 1
-    Amount: 10
+    Amount: 20
