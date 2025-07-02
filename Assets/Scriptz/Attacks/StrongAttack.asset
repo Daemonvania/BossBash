@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814ae7a3cb4ef6a4195a8809428dd00e, type: 3}
   m_Name: StrongAttack
   m_EditorClassIdentifier: 
-  Name: Strong Attack
+  Name: Decimate
   Description: Hits enemy strong, but bad for heat
   animTriggerName: StrongAttack
   Actions:
@@ -21,4 +21,4 @@ MonoBehaviour:
     Amount: 35
   - Target: 0
     Type: 1
-    Amount: 20
+    Amount: 25
