@@ -47,7 +47,7 @@ Material:
     m_Floats:
     - _ColorMask: 15
     - _FlickerStrength: 0.75
-    - _ScrollSpeed: 0.2
+    - _ScrollSpeed: 0.3
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0

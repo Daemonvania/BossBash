@@ -342,54 +342,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 9.9
---- !u!1 &2768804512337155006
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2960615954734374941}
-  - component: {fileID: 1931809879045758237}
-  m_Layer: 0
-  m_Name: Healthbar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2960615954734374941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2768804512337155006}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -717.18665, y: -798.29895, z: 724.18536}
-  m_LocalScale: {x: 1.0169413, y: 1.0169413, z: 1.0169413}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6807792415547921009}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1931809879045758237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2768804512337155006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059c5c830ecada14e81c58eb2e7e14ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBarFillImage: {fileID: 0}
-  _healthBarTrailing: {fileID: 0}
-  _trailDelay: 0.4
-  _maxHealth: 100
 --- !u!1 &2939009427434392888
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +703,6 @@ RectTransform:
   - {fileID: 4479976664871946276}
   - {fileID: 4257751297000116094}
   - {fileID: 4667726111339999378}
-  - {fileID: 2960615954734374941}
   m_Father: {fileID: 4014614596011285037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
