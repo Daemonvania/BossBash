@@ -16,6 +16,8 @@ public class CharacterTurnBased : MonoBehaviour
     private HealthBarManager _healthBarManager;
 
    [HideInInspector] public int overheatTicker = 0;
+   [SerializeField] int maxHealth = 100;
+   [SerializeField] int maxOverheat = 100;
    [HideInInspector] public bool isOverheating { get; private set; }
 
     private void Awake()
@@ -23,8 +25,8 @@ public class CharacterTurnBased : MonoBehaviour
         //can move these to Initializefight on the BattleHandlerTurns
         animator = GetComponentInChildren<Animator>();
         _healthBarManager = GetComponent<HealthBarManager>();
-        healthSystem = new HealthSystem(100);
-        overheatSystem = new OverheatSystem(100);
+        healthSystem = new HealthSystem(maxHealth);
+        overheatSystem = new OverheatSystem(maxOverheat);
         healthSystem.OnHealthChanged += OnHealthChanged;
         overheatSystem.OnOverheatChanged += OnHealthChanged;
         isOverheating = false;

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 814ae7a3cb4ef6a4195a8809428dd00e, type: 3}
-  m_Name: Slice
+  m_Name: BossWeakAttack
   m_EditorClassIdentifier: 
-  Name: Slice
-  Description: Slice Enemy
-  animTriggerName: Slice
+  Name: Shoot
+  Description: Shoots enemy, dealing I could make this custom woah
+  animTriggerName: Shoot
   Actions:
   - Target: 1
     Type: 0
     Amount: 20
   - Target: 0
     Type: 1
-    Amount: 10
+    Amount: 20

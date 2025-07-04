@@ -4118,6 +4118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   overheatTicker: 0
+  maxHealth: 300
+  maxOverheat: 100
 --- !u!114 &1171016915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,8 +4134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossAttacks:
   - {fileID: 11400000, guid: def019bc4f626bd4aa8bbec119cbcc18, type: 2}
-  - {fileID: 11400000, guid: 663caf5fe45061a43ad7a7ffa4baf449, type: 2}
   - {fileID: 11400000, guid: d5b45c3d5597dbd4ab560ea6b218689c, type: 2}
+  - {fileID: 11400000, guid: 4d4a36ed6c27e164aa237397b997e183, type: 2}
 --- !u!114 &1171016916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4840,6 +4842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 1
   overheatTicker: 0
+  maxHealth: 150
+  maxOverheat: 100
 --- !u!114 &1244888307
 MonoBehaviour:
   m_ObjectHideFlags: 0
