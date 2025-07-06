@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,17 @@ public class CharacterTurnBased : MonoBehaviour
    [HideInInspector] public int overheatTicker = 0;
    [SerializeField] int maxHealth = 100;
    [SerializeField] int maxOverheat = 100;
+
+   [Space] [SerializeField] private GameObject weakAttackParticle;
+   [SerializeField] private GameObject strongAttackParticle;
+   [SerializeField] private GameObject overheatParticle;
+   [SerializeField] private GameObject cooldownParticle;
+   [SerializeField] private GameObject overheatOpponentParticle;
+   [SerializeField] private GameObject healparticle;
+   
+   
+   
+   
    [HideInInspector] public bool isOverheating { get; private set; }
 
     private void Awake()
@@ -71,7 +83,7 @@ public class CharacterTurnBased : MonoBehaviour
         healthSystem.Damage(damageAmount);
 
         if (healthSystem.IsDead()) {
-            // Died
+            animator.SetBool("Dead", true);
         }
     }
     public void Overheat(int overheatAmount) {
@@ -131,6 +143,39 @@ public class CharacterTurnBased : MonoBehaviour
             }
         }
     }
+    
+    
+    public void PlayParticle(string particleName)
+    {
+        if (particleName == "WeakAttack")
+        {
+            Debug.Log("WeakAttack");
+            weakAttackParticle.SetActive(true);
+            StartCoroutine(SetParticleInactive(weakAttackParticle));
+        }
+        if (particleName == "StrongAttack")
+        {
+            strongAttackParticle.SetActive(true);
+            StartCoroutine(SetParticleInactive(strongAttackParticle));
+        }
+        if (particleName == "Heal")
+        {
+            healparticle.SetActive(true);
+            StartCoroutine(SetParticleInactive(healparticle));
+        }
+        if (particleName == "Cooldown")
+        {
+            healparticle.SetActive(true);
+            StartCoroutine(SetParticleInactive(cooldownParticle));
+        }
+    }
+
+    private IEnumerator SetParticleInactive(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(1.5f);
+        gameObject.SetActive(false);
+    }
+    
     public void AttackEnded()
     {
         animator.SetBool(currentAttack.animTriggerName, false);

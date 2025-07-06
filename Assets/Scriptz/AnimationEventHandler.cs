@@ -26,4 +26,9 @@ public class AnimationEventHandler : MonoBehaviour
     {
         _characterTurnBased.AttackEnded();
     }
+
+    public void PlayParticle(string ParticleName)
+    {
+        _characterTurnBased.PlayParticle(ParticleName);
+    }
 }
