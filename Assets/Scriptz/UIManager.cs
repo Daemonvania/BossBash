@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject DefendButtons;
 
     [SerializeField] private MenuEventSystemHandler _menuEventSystemHandler;
+
+    [SerializeField] private GameObject VictoryUI;
+    [SerializeField] private GameObject DefeatUI;
+    
     
     private BattleHandlerTurns _battleHandlerTurns;
 
@@ -16,6 +20,8 @@ public class UIManager : MonoBehaviour
     {
         _battleHandlerTurns = GetComponent<BattleHandlerTurns>();
         ShowMainMenu();
+        VictoryUI.SetActive(false);
+        DefeatUI.SetActive(false);
     }
 
     private void OnEnable()
@@ -65,5 +71,16 @@ public class UIManager : MonoBehaviour
         AttackButtons.SetActive(false);
         DefendButtons.SetActive(false);
         MainButtons.SetActive(true);
+    }
+
+    public void ShowVictory()
+    {
+        PlayerUI.SetActive(false);
+        VictoryUI.SetActive(true);
+    }
+    public void ShowDefeat()
+    {
+        PlayerUI.SetActive(false);
+        DefeatUI.SetActive(true);
     }
 }

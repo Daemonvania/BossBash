@@ -18,6 +18,8 @@ public class BattleHandlerTurns : MonoBehaviour
     
     private static BattleHandlerTurns instance;
 
+
+    private UIManager _uiManager;
     public static BattleHandlerTurns GetInstance() {
         return instance;
     }
@@ -40,6 +42,7 @@ public class BattleHandlerTurns : MonoBehaviour
     private void Awake() {
         instance = this;
         _bossAI = enemyCharacterBattle.gameObject.GetComponent<BossAI>();
+        _uiManager = GetComponent<UIManager>();
     }
     
     private void Start() {
@@ -196,13 +199,13 @@ public class BattleHandlerTurns : MonoBehaviour
         if (playerCharacterBattle.IsDead()) {
             // Player dead, enemy wins
             //CodeMonkey.CMDebug.TextPopupMouse("Enemy Wins!");
-         
+         _uiManager.ShowDefeat();
             return true;
         }
         if (enemyCharacterBattle.IsDead()) {
             // Enemy dead, player wins
             //CodeMonkey.CMDebug.TextPopupMouse("Player Wins!");
-       
+            _uiManager.ShowVictory();
             return true;
         }
 
