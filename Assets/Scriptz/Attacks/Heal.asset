@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   Name: Heal
-  Description: Heals self
+  Description: Recover health. <br> High heat cost.
   animTriggerName: Heal
   Actions:
   - Target: 0

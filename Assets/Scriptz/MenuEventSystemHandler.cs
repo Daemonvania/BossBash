@@ -22,6 +22,11 @@ public class MenuEventSystemHandler : MonoBehaviour
     protected Tween _scaleUpTween;
     protected Tween _scaleDownTween;
 
+
+    [SerializeField] private AudioClip selectSound;
+    [SerializeField] private AudioClip clickSound;
+    
+
     public virtual void Awake()
     {
         foreach (var selectable in Selectables)
@@ -81,6 +86,13 @@ public class MenuEventSystemHandler : MonoBehaviour
         PointerExit.callback.AddListener(OnPointerExit);
         trigger.triggers.Add(PointerExit);
 
+        EventTrigger.Entry ClickEntry = new EventTrigger.Entry
+        {
+            eventID = EventTriggerType.PointerClick
+        };
+        ClickEntry.callback.AddListener(OnClick);
+        trigger.triggers.Add(ClickEntry);
+
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -90,6 +102,9 @@ public class MenuEventSystemHandler : MonoBehaviour
         _scaleUpTween = eventData.selectedObject.transform.DOScale(newScale, _scaleDuration);
 
         ActionButton actionButton = eventData.selectedObject.GetComponent<ActionButton>();
+        
+        SoundManager.instance.PlaySoundClip(selectSound, transform, 1);
+
         if (actionButton != null)
         {
             actionButton.ShowInfo(); //todo interface instead so that I can have different functionality on each script "OnSelect"
@@ -101,6 +116,9 @@ public class MenuEventSystemHandler : MonoBehaviour
     {
         Selectable sel = eventData.selectedObject.GetComponent<Selectable>();
         _scaleDownTween = eventData.selectedObject.transform.DOScale(_scales[sel], _scaleDuration);
+        
+        // SoundManager.instance.PlaySoundClip(clickSound, transform, 1);
+
         
         ActionButton actionButton = eventData.selectedObject.GetComponent<ActionButton>();
         if (actionButton != null)
@@ -136,5 +154,17 @@ public class MenuEventSystemHandler : MonoBehaviour
                 kvp.Key.transform.DOScale(kvp.Value, _scaleDuration);
             }
         }
+    }
+    
+    public void OnClick(BaseEventData eventData)
+    {
+        GameObject clickedObject = eventData.selectedObject;
+        if (clickedObject == null) return;
+
+        Selectable sel = clickedObject.GetComponent<Selectable>();
+        if (sel == null) return;
+        
+        SoundManager.instance.PlaySoundClip(clickSound, transform, 1);
+        
     }
 }

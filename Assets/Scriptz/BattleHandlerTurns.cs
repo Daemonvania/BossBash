@@ -141,7 +141,7 @@ public class BattleHandlerTurns : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         playerCharacterBattle.OpponentAttacking();
-        Attack(_bossAI.ChooseBossAttack());
+        Attack(_bossAI.ChooseBossAttack(enemyCharacterBattle));
     }
     private void HandleOverheatTicker(CharacterTurnBased character)
     {

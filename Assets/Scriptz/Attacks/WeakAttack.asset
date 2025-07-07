@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: WeakAttack
   m_EditorClassIdentifier: 
   Name: Slice
-  Description: Slice Enemy
+  Description: Deal moderate damage to the opponent.<br> Moderate heat cost.
   animTriggerName: Slice
   Actions:
   - Target: 1
     Type: 0
-    Amount: 100
+    Amount: 30
   - Target: 0
     Type: 1
-    Amount: 15
+    Amount: 20

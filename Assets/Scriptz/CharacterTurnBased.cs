@@ -26,7 +26,14 @@ public class CharacterTurnBased : MonoBehaviour
    [SerializeField] private GameObject cooldownParticle;
    [SerializeField] private GameObject overheatOpponentParticle;
    [SerializeField] private GameObject healparticle;
-   
+   [Space]
+   [SerializeField] private AudioClip weakAttackSound;
+   [SerializeField] private AudioClip strongAttackSound;
+   [SerializeField] private AudioClip overheatSound;
+   [SerializeField] private AudioClip cooldownSound;
+   [SerializeField] private AudioClip overheatOpponentSound;
+   [SerializeField] private AudioClip healSound;
+   [SerializeField] private AudioClip hurtSound;
    
    
    
@@ -78,6 +85,7 @@ public class CharacterTurnBased : MonoBehaviour
         else if (damageAmount > 0)
         {
             animator.SetTrigger("Hurt");
+            SoundManager.instance.PlaySoundClip(hurtSound, transform, 0.6f);
         }
 
         healthSystem.Damage(damageAmount);
@@ -94,6 +102,9 @@ public class CharacterTurnBased : MonoBehaviour
             Debug.Log("Overheating");
             isOverheating = true;
             animator.SetBool("Overheat", true);
+            overheatParticle.SetActive(true);
+            SoundManager.instance.PlaySoundClip(overheatSound, transform, 0.6f);
+
         }
     }
 
@@ -103,6 +114,7 @@ public class CharacterTurnBased : MonoBehaviour
         overheatTicker = 0;
         animator.SetBool("Overheat", false);
         overheatSystem.SetOverheatAmount(0);
+        overheatParticle.SetActive(false);
     }
 
     public bool IsDead() {
@@ -152,21 +164,34 @@ public class CharacterTurnBased : MonoBehaviour
             Debug.Log("WeakAttack");
             weakAttackParticle.SetActive(true);
             StartCoroutine(SetParticleInactive(weakAttackParticle));
+            SoundManager.instance.PlaySoundClip(weakAttackSound, transform, 0.6f);
         }
         if (particleName == "StrongAttack")
         {
             strongAttackParticle.SetActive(true);
             StartCoroutine(SetParticleInactive(strongAttackParticle));
+            SoundManager.instance.PlaySoundClip(strongAttackSound, transform, 0.6f);
         }
         if (particleName == "Heal")
         {
             healparticle.SetActive(true);
             StartCoroutine(SetParticleInactive(healparticle));
+            SoundManager.instance.PlaySoundClip(healSound, transform, 0.6f);
+
         }
         if (particleName == "Cooldown")
         {
-            healparticle.SetActive(true);
+            cooldownParticle.SetActive(true);
             StartCoroutine(SetParticleInactive(cooldownParticle));
+            SoundManager.instance.PlaySoundClip(cooldownSound, transform, 0.6f);
+
+        }
+        if (particleName == "OverheatOpponent")
+        {
+            overheatOpponentParticle.SetActive(true);
+            StartCoroutine(SetParticleInactive(overheatOpponentParticle));
+            SoundManager.instance.PlaySoundClip(overheatOpponentSound, transform, 0.6f);
+
         }
     }
 
@@ -187,6 +212,15 @@ public class CharacterTurnBased : MonoBehaviour
     void OnHealthChanged()
     {
         _healthBarManager.UpdateBarsGradual(healthSystem.GetHealthPercent(), overheatSystem.GetOverheatPercent());
+    }
+
+    public float GetHealthPercent()
+    {
+        return healthSystem.GetHealthPercent();
+    }
+    public float GetOverheatPercent()
+    {
+        return overheatSystem.GetOverheatAmount();
     }
     
 }

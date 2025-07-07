@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cooldown
   m_EditorClassIdentifier: 
   Name: Cooldown
-  Description: Cools self down
+  Description: Cool systems down, reducing the heat. <br>  No heat cost.
   animTriggerName: Cooldown
   Actions:
   - Target: 0

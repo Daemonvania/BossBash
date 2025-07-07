@@ -48950,6 +48950,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 1
+    functionName: PlayParticle
+    data: OverheatOpponent
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.0666666
     functionName: AttackEnded
     data: 
