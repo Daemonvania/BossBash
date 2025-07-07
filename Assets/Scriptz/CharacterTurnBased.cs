@@ -85,12 +85,13 @@ public class CharacterTurnBased : MonoBehaviour
         else if (damageAmount > 0)
         {
             animator.SetTrigger("Hurt");
-            SoundManager.instance.PlaySoundClip(hurtSound, transform, 0.6f);
+            SoundManager.instance.PlaySoundClip(hurtSound, transform, 0.45f);
         }
 
         healthSystem.Damage(damageAmount);
 
         if (healthSystem.IsDead()) {
+            EndOverheat();
             animator.SetBool("Dead", true);
         }
     }
@@ -164,13 +165,13 @@ public class CharacterTurnBased : MonoBehaviour
             Debug.Log("WeakAttack");
             weakAttackParticle.SetActive(true);
             StartCoroutine(SetParticleInactive(weakAttackParticle));
-            SoundManager.instance.PlaySoundClip(weakAttackSound, transform, 0.6f);
+            SoundManager.instance.PlaySoundClip(weakAttackSound, transform, 0.45f);
         }
         if (particleName == "StrongAttack")
         {
             strongAttackParticle.SetActive(true);
             StartCoroutine(SetParticleInactive(strongAttackParticle));
-            SoundManager.instance.PlaySoundClip(strongAttackSound, transform, 0.6f);
+            SoundManager.instance.PlaySoundClip(strongAttackSound, transform, 0.45f);
         }
         if (particleName == "Heal")
         {
@@ -190,7 +191,7 @@ public class CharacterTurnBased : MonoBehaviour
         {
             overheatOpponentParticle.SetActive(true);
             StartCoroutine(SetParticleInactive(overheatOpponentParticle));
-            SoundManager.instance.PlaySoundClip(overheatOpponentSound, transform, 0.6f);
+            SoundManager.instance.PlaySoundClip(overheatOpponentSound, transform, 0.7f);
 
         }
     }
