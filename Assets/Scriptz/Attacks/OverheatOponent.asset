@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OverheatOponent
   m_EditorClassIdentifier: 
   Name: Heat Pulse
-  Description: Heat up the opponent, increasing their heat meter. <br> Low heat cost.
+  Description: Increase opponent's heat. <br> Low heat cost.
   animTriggerName: OverheatOpponent
   Actions:
   - Target: 1
